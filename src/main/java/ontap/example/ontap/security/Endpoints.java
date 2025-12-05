@@ -9,7 +9,8 @@ public class Endpoints {
         "/api/products",
         "/api/products/**",
         "/api/categorys/**",
-        "/api/categorys/"
+        "/api/categorys/",
+        "/api/jwt/**"
     };
     public static final String[] PUBLIC_POST = {
         "/users",
@@ -18,9 +19,9 @@ public class Endpoints {
         "/api/users/**",
         "/api/products",
         "/api/products/**",
-        "/api/carts/**",
         "/api/address/**",
-        "/api/orders/**"
+        "/api/orders/**",
+        "/api/jwt/**"
     };
     public static final String[] PUBLIC_PUT = {
         "/users",

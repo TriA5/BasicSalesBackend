@@ -7,6 +7,7 @@ import ontap.example.ontap.dto.LoginDTO;
 import ontap.example.ontap.dto.UserDTO;
 import ontap.example.ontap.entity.Address;
 import ontap.example.ontap.entity.User;
+import ontap.example.ontap.security.JwtResponse;
 
 public interface UserService {
     public User createUser(UserDTO userDTO);
@@ -19,5 +20,5 @@ public interface UserService {
 
     public User getUserById(UUID idUser);
 
-    public User login(LoginDTO loginDTO);
+    public JwtResponse login(LoginDTO loginDTO);
 }

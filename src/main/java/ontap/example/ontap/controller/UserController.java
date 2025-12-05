@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ontap.example.ontap.dto.LoginDTO;
 import ontap.example.ontap.dto.UserDTO;
 import ontap.example.ontap.entity.User;
+import ontap.example.ontap.security.JwtResponse;
 import ontap.example.ontap.service.UserService;
 
 @Controller
@@ -52,17 +53,9 @@ public class UserController {
     public User getUserById(@PathVariable UUID id){
         return userService.getUserById(id);
     }
-    // @PostMapping("/authen")
-    // public User login(@RequestBody LoginDTO loginDTO){
-    //     return userService.login(loginDTO);
-    // }
+    
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginDTO loginDTO) {
-        try {
-            User user = userService.login(loginDTO);
-            return ResponseEntity.ok(user);
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    public JwtResponse login(@RequestBody LoginDTO loginDTO) {
+        return userService.login(loginDTO);
     }
 }
